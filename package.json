@@ -1,0 +1,14 @@
+{
+  "name": "chat-app-root",
+  "version": "1.0.0",
+  "description": "Integrated Real-time Chat Application Workspace",
+  "scripts": {
+    "install-all": "npm install --prefix server && npm install --prefix client",
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
+    "start": "npx concurrently --kill-others \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

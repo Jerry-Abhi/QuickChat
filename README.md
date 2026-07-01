@@ -1,144 +1,107 @@
-# QuickChat 💬
+# QuickChat - Real-Time Chat Application
 
-QuickChat is a simple real-time chat application built using **React**, **Node.js**, **Express**, and **Socket.io**. It allows multiple users to join the chat using a username and exchange messages instantly in a clean and responsive interface.
+QuickChat is a responsive, modern real-time chat application built with React on the frontend and Node.js/Express/Socket.io on the backend. It features premium glassmorphic UI aesthetics, smooth animations, and active connection tracking.
 
 ---
 
 ## Features
 
-- 🚀 Real-time messaging with Socket.io
-- 👤 Dummy username login
-- 💬 Send and receive messages instantly
-- 🕒 Message timestamps
-- 📱 Responsive and modern UI
-- ⚡ Fast and lightweight
+- **Real-Time Communication**: Instantly transmit and receive messages across all connected clients via Socket.io.
+- **Glassmorphic UI Design**: A stunning premium theme featuring dark mode gradients, translucent cards, subtle animations, and high contrast typography.
+- **User Connection Count**: Live status indicator in the header showing the current number of online users.
+- **Session Retention**: Remembers the user's username using browser session storage so reloading doesn't interrupt their chat session.
+- **Auto-Scrolling messages**: Automatically scrolls down as new messages are sent or received.
+- **Responsive Layout**: Adapts smoothly to desktop, tablet, and mobile screens.
 
 ---
 
-## Tech Stack
+## Technologies Used
 
 ### Frontend
-- React
-- Vite
-- CSS
-- Socket.io Client
+- **React**: Modern functional components with hooks.
+- **Vite**: Ultra-fast build tool and local dev server.
+- **Socket.io Client**: For WebSockets connection to the server.
+- **Lucide React**: Clean and minimal modern iconography.
+- **Vanilla CSS**: Premium bespoke responsive styles.
 
 ### Backend
-- Node.js
-- Express.js
-- Socket.io
-- CORS
+- **Node.js**: Server runtime.
+- **Express**: Lightweight web framework for HTTP routes.
+- **Socket.io**: real-time bidirectional event-based communication.
+- **CORS**: Cross-origin resource sharing middleware.
+- **Nodemon**: Auto-restarts server on changes (dev dependency).
 
 ---
 
 ## Project Structure
 
-```
-quick-chat/
-│
-├── client/
+```text
+chat-app/
+├── client/                     # React App (Vite)
+│   ├── public/                 # Static assets
 │   ├── src/
-│   ├── public/
-│   └── package.json
+│   │   ├── assets/             # Icons & images
+│   │   ├── components/
+│   │   │   ├── Login.jsx       # Username entry screen
+│   │   │   └── ChatRoom.jsx    # Core chat room screen
+│   │   ├── App.css             # Secondary overrides (empty)
+│   │   ├── App.jsx             # Main router and Socket setup
+│   │   ├── index.css           # Premium design system styles
+│   │   └── main.jsx            # Application mount point
+│   ├── index.html              # Main HTML document (injects Google Fonts)
+│   ├── package.json            # Client dependencies
+│   └── vite.config.js          # Vite config
 │
-├── server/
-│   ├── server.js
-│   └── package.json
-│
-├── package.json
-├── package-lock.json
-└── README.md
+└── server/                     # Node.js + Express Server
+    ├── index.js                # Server logic & Socket.io handling
+    └── package.json            # Server dependencies
 ```
 
 ---
 
-## Installation
+## Setup & Running Instructions
 
-Clone the repository
+Ensure you have [Node.js](https://nodejs.org/) installed (v16+ recommended).
 
-```bash
-git clone <repository-url>
-```
+### 1. Backend Server Setup & Start
 
-Go to the project directory
+1. Navigate to the server folder:
+   ```bash
+   cd chat-app/server
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the server in development mode (with auto-reload):
+   ```bash
+   npm run dev
+   ```
+   *The server will run on [http://localhost:5000](http://localhost:5000).*
 
-```bash
-cd quick-chat
-```
+### 2. Frontend Client Setup & Start
 
-Install dependencies
-
-```bash
-npm install
-```
-
-Install frontend dependencies
-
-```bash
-cd client
-npm install
-```
-
-Install backend dependencies
-
-```bash
-cd ../server
-npm install
-```
-
----
-
-## Run the Project
-
-Start Backend
-
-```bash
-cd server
-npm start
-```
-
-Start Frontend
-
-```bash
-cd client
-npm run dev
-```
-
-Frontend
-
-```
-http://localhost:5173
-```
-
-Backend
-
-```
-http://localhost:5000
-```
+1. Open a new terminal window and navigate to the client folder:
+   ```bash
+   cd chat-app/client
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+   *The client will start, usually on [http://localhost:5173](http://localhost:5173).*
 
 ---
 
-## How It Works
+## Manual Verification / How to Test
 
-1. Enter a username.
-2. Join the chat room.
-3. Send messages in real time.
-4. Connected users instantly receive new messages.
-5. Every message displays the sender name and timestamp.
-
----
-
-## Future Improvements
-
-- User authentication
-- Chat history database
-- Typing indicator
-- Online user list
-- Private messaging
-- Emoji support
-
----
-
-## Author
-
-**Abhishek Anand**
+1. Open your browser and go to [http://localhost:5173](http://localhost:5173).
+2. Enter a username (e.g. `Maverick`) and click **Join Chat**.
+3. Open a second browser window (or private browsing tab) and go to [http://localhost:5173](http://localhost:5173) as well.
+4. Enter another username (e.g. `Trinity`) and click **Join Chat**.
+5. Observe the active user count in the header updates to `2 users online`.
+6. Send messages back and forth. You will see they appear instantly in both windows.
