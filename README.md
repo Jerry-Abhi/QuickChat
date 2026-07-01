@@ -1,16 +1,144 @@
-# React + Vite
+# QuickChat 💬
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+QuickChat is a simple real-time chat application built using **React**, **Node.js**, **Express**, and **Socket.io**. It allows multiple users to join the chat using a username and exchange messages instantly in a clean and responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- 🚀 Real-time messaging with Socket.io
+- 👤 Dummy username login
+- 💬 Send and receive messages instantly
+- 🕒 Message timestamps
+- 📱 Responsive and modern UI
+- ⚡ Fast and lightweight
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Frontend
+- React
+- Vite
+- CSS
+- Socket.io Client
+
+### Backend
+- Node.js
+- Express.js
+- Socket.io
+- CORS
+
+---
+
+## Project Structure
+
+```
+quick-chat/
+│
+├── client/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── server/
+│   ├── server.js
+│   └── package.json
+│
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Go to the project directory
+
+```bash
+cd quick-chat
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Install frontend dependencies
+
+```bash
+cd client
+npm install
+```
+
+Install backend dependencies
+
+```bash
+cd ../server
+npm install
+```
+
+---
+
+## Run the Project
+
+Start Backend
+
+```bash
+cd server
+npm start
+```
+
+Start Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+Frontend
+
+```
+http://localhost:5173
+```
+
+Backend
+
+```
+http://localhost:5000
+```
+
+---
+
+## How It Works
+
+1. Enter a username.
+2. Join the chat room.
+3. Send messages in real time.
+4. Connected users instantly receive new messages.
+5. Every message displays the sender name and timestamp.
+
+---
+
+## Future Improvements
+
+- User authentication
+- Chat history database
+- Typing indicator
+- Online user list
+- Private messaging
+- Emoji support
+
+---
+
+## Author
+
+**Abhishek Anand**
